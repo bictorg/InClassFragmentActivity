@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="image_ids">
-        <item>@drawable/ccf_caramelappie</item>
+        <item>@drawable/ccf_caramelapple</item>
         <item>@drawable/ccf_celebration</item>
         <item>@drawable/ccf_chocolatecaramelicious</item>
-        <item>@drawable/ccf_cinnaboncinnamonwirl</item>
+        <item>@drawable/ccf_cinnaboncinnamoncwirl</item>
         <item>@drawable/ccf_coconutcreampie</item>
         <item>@drawable/ccf_freshstrawberry</item>
         <item>@drawable/ccf_godiva</item>
