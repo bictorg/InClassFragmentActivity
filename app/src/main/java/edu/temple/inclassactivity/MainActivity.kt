@@ -8,12 +8,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Fetch images into IntArray called imageArray
-        val typedArray = resources.obtainTypedArray(R.array.image_ids)
-        val imageArray = IntArray(typedArray.length()) {typedArray.getResourceId(it, 0)}
-        typedArray.recycle()
+        // Only add the fragment if it's not already added (to handle configuration changes)
+        if (savedInstanceState == null) {
+            // Fetch images into IntArray called imageArray
+            val typedArray = resources.obtainTypedArray(R.array.image_ids)
+            val imageArray = IntArray(typedArray.length()) { typedArray.getResourceId(it, 0) }
+            typedArray.recycle()
 
-        // Attach an instance of ImageDisplayFragment using factory method
-
+            // Attach an instance of ImageDisplayFragment using factory method
+            val fragment = ImageDisplayFragment.newInstance(imageArray)
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit()
+        }
     }
 }
